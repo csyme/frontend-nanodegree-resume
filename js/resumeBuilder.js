@@ -8,10 +8,49 @@ var bio = {
             "twitter": "twitter",
             "location": "North Andover, MA"
     },
-        "skills": ["programming","engineering", "RAN Design" ],
+        "skills": ["Excel","RAN Newtork Design", "RAN Design" ],
         "welcomeMessage": "Welcome to my resume",
         "biopic": "images/fry.jpg",
 }
+
+function displayBio()
+{
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    $("#header").prepend(formattedRole);
+
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    $("#header").prepend(formattedName);
+      
+    var formattedwelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+    $("#header").append(formattedwelcome);
+    
+    var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+    $("#header").append(formattedPic);
+    
+    var formattedmobile = HTMLmobile.replace("%data%", bio.contact.mobile);
+    $("#topContacts").append(formattedmobile);
+    
+    var formattedemail = HTMLemail.replace("%data%", bio.contact.email);
+    $("#topContacts").append(formattedemail);
+    
+    var formattedtwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
+    $("#topContacts").append(formattedtwitter);
+
+    var formattedgithub = HTMLgithub.replace("%data%", bio.contact.github);
+    $("#topContacts").append(formattedgithub);
+    
+    var formattedlocation = HTMLlocation.replace("%data%", bio.contact.location);
+    $("#topContacts").append(formattedlocation);
+
+    $("#header").append(HTMLskillsStart);
+    for (skill in bio.skills)
+    {
+        var formattedskills = HTMLskills.replace("%data%",bio.skills[skill]);
+        $("#header").append(formattedskills);
+    } 
+}
+
+
 
 var education = { 
     "Schools": [
@@ -84,3 +123,6 @@ var projects = {
         }
      ]    
 }
+
+
+displayBio();
