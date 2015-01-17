@@ -1,0 +1,7 @@
+References used for Project 2 Interactive Resume:
+
+- Piazza Project 2, primarily for Google API display issues
+
+- Various google searchs for java script references
+   - in particular w3schools.com
+
